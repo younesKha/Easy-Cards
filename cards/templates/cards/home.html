@@ -1,0 +1,125 @@
+
+
+{% extends "cards/main/base.html" %}
+
+
+{% block contant %}
+
+
+
+<style>
+
+
+    .backgroupcolor{
+        background-color: rgb(214, 233, 245); 
+        padding: 3px;margin: 
+        5px;margin-top:12px;
+    }
+    </style>
+
+
+{%for gg in groups %}
+<div class='backgroupcolor'>
+
+
+  
+
+  <a class='nav-link' href="//{{request.META.HTTP_HOST}}/display_group/{{gg.id}}"> <h2>{{gg.name}}</h2></a> 
+    <div class="card-group">
+
+    {% for cc in cards %}
+
+   {% if cc.group_id.id == gg.id %}
+
+
+<!-------------------------------------------------------------->
+<div class="card text-black  mb-3" style="max-width: 18rem;margin: 3px;">
+  <div class="card-body">
+    <h5 class="card-title">{{cc.title}} </h5>
+    <p class="card-text">{{cc.body|truncatechars:21}}</p>
+    <div style="position: absolute; bottom: 5px; right: 10px;">
+
+      {% if cc.importancy == 1 %}
+      <i class="fas fa fa-check fa-sm fa-fw " title='Normal importance ' style="color: silver;"></i>
+      {% elif cc.importancy == 2 %}
+      <i class="fas fa fa-check fa-sm fa-fw " title='Middle  importance ' style="color:orange;"></i>
+      {% elif cc.importancy == 3 %}
+      <i class="fas fa fa-check fa-sm fa-fw " title='High importance' style="color:limegreen;"></i>
+
+      {% endif %}
+
+    </div>
+    <div style="position: absolute; bottom:60px; right: 10px;">
+      {% if cc.remember == 1 %}
+      <i class="fas fa fa-crosshairs  fa-sm fa-fw " data-toggle="tooltip" data-placement="bottom" title='remember'
+        style="color: gold;"></i>
+      {% endif %}
+    </div>
+    <div style="position: absolute; top:5px; right: 1px;">
+
+      <!-- Nav Item - User Information -->
+
+      <a class="nav-link" style="padding: 0px;margin: 0px;;" href="#" id="cardDropdown" role="button"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa fa fa-ellipsis-v fa-sm fa-fw mr-2 text-green-400"></i>
+      </a>
+      <!-- Dropdown - User Information -->
+      <div class="dropdown-menu " aria-labelledby="cardDropdown">
+        <a class="dropdown-item" data-toggle="modal"
+          onclick="seturl('//{{request.META.HTTP_HOST}}/delete_card/{{cc.id}}')" data-target="#delete_cardModal"
+          href="#">
+          <i class="fas fa fa-eraser fa-sm fa-fw mr-2 text-gray-400"></i>
+          delete
+        </a>
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-edit fa-sm fa-fw mr-2 text-gray-400"></i>
+          update
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card-footer">
+    <small class="text-muted">Group:{{cc.group_id.name}}</small>
+  </div>
+
+</div>
+<!---------------------------------------------------------------->
+
+
+
+
+
+
+
+
+      
+
+    {% endif %}
+
+
+    {% endfor %}
+    
+
+    <div class="card text-gray nav-link  mb-3" onclick="load_groups('//{{request.META.HTTP_HOST}}/load_groups',{{gg.id}})"  data-toggle="modal" data-target="#cardModal"  style="max-width: 18rem; cursor: pointer;">
+        <div class="card-body">
+          <h5 class="card-title"> </h5>
+          <p class="card-text" style="text-align: center;">   <i class="fas  	fas fa-paperclip fa-3x fa-fw mr-2 text-gray-400"></i> </p>
+        </div>  
+  <div class="card-footer">
+    <p class="card-text" style="text-align: center;"> New Card</p>
+  </div>
+</div>
+
+
+</div>
+</div>
+
+
+{% endfor %}
+
+
+
+{% endblock %}

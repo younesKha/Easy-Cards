@@ -1,0 +1,92 @@
+
+
+
+
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="//{{request.META.HTTP_HOST}}/cards">
+      <div class="sidebar-brand-icon rotate-n-15">
+        <i class="fas fa-laugh-wink"></i>
+      </div>
+      <div class="sidebar-brand-text mx-3">Easy Cards </div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+
+
+          <!-- Heading -->
+          
+          <div class="sidebar-heading">
+            Main Menu
+          </div>
+
+          
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+      <a class="nav-link" href="//{{request.META.HTTP_HOST}}/home">
+        <i class="fas fa fa-clone"></i>
+        <span>Home</span></a>
+    </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+          <a class="nav-link" href="//{{request.META.HTTP_HOST}}/cards">
+            <i class="fas fa fa-clone"></i>
+            <span>All cards</span></a>
+        </li>
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+      <a class="nav-link" href="//{{request.META.HTTP_HOST}}/groups">
+        <i class="fas fa fa-clone"></i>
+        <span>Groups</span></a>
+    </li>
+
+
+    <hr class="sidebar-divider">
+   
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <i class="fas fa fa-clone"></i>
+        <span>LeveLs</span>
+      </a>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" href="//{{request.META.HTTP_HOST}}/levels/1">Normal</a>
+
+          <a class="collapse-item" href="//{{request.META.HTTP_HOST}}/levels/2">mediam</a>
+          <a class="collapse-item" href="//{{request.META.HTTP_HOST}}/levels/3">important</a>
+        </div>
+      </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+      <a class="nav-link" href="//{{request.META.HTTP_HOST}}/remember">
+        <i class="fas fa fa-clone"></i>
+        <span>remember</span></a>
+    </li>
+   
+    
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+          <!-- Sidebar Toggler (Sidebar) -->
+          <div  class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+          </div>
+  </ul>
