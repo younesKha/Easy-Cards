@@ -66,8 +66,9 @@ def load_groups(request):
 #aa@gmail.com
 def register(request):
     if request.user.is_authenticated:
+        
+        
         return redirect('cards:cards')
-        c_groups.objects.create('my group', cuser=request.user,remember=0)
 
     else:
         form = CreateUserForm()
@@ -75,7 +76,7 @@ def register(request):
             form = CreateUserForm(request.POST)
             if form.is_valid():
                 user=form.save()
-
+                c_groups.objects.create(name='My Group', cuser=user,remember=0)
                 login(request , user)
                 messages.success(request, 'Account was created for ' + form.cleaned_data.get('username'))
                 return redirect('cards:cards')
