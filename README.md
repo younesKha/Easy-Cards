@@ -1,5 +1,5 @@
 # Easy-Cards
-website using Django 
+website using Django  python framwork
 
 link to live website
 http://younes.pythonanywhere.com/
